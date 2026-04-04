@@ -1,0 +1,19 @@
+{
+  "name": "Project Roster Entry",
+  "doctype": "DocType",
+  "module": "QAIFF Ops",
+  "engine": "InnoDB",
+  "istable": 1,
+  "fields": [
+    {"fieldname": "operator", "fieldtype": "Link", "label": "Operator", "options": "Operator Profile", "reqd": 1, "in_list_view": 1},
+    {"fieldname": "full_name", "fieldtype": "Data", "label": "Full Name", "fetch_from": "operator.full_name", "read_only": 1, "in_list_view": 1},
+    {"fieldname": "role", "fieldtype": "Select", "label": "Role", "options": "Operator\nCaptain\nChief", "reqd": 1, "default": "Operator", "in_list_view": 1},
+    {"fieldname": "shift", "fieldtype": "Select", "label": "Shift", "options": "A\nB", "default": "A", "in_list_view": 1},
+    {"fieldname": "daily_rate", "fieldtype": "Currency", "label": "Daily Rate", "reqd": 1, "default": "1200", "in_list_view": 1},
+    {"fieldname": "phone", "fieldtype": "Data", "label": "Phone", "fetch_from": "operator.phone", "read_only": 1},
+    {"fieldname": "upi_id", "fieldtype": "Data", "label": "UPI ID", "fetch_from": "operator.upi_id"},
+    {"fieldname": "referred_by", "fieldtype": "Data", "label": "Referred By", "fetch_from": "operator.referred_by"},
+    {"fieldname": "status", "fieldtype": "Select", "label": "Status", "options": "Active\nDropped", "default": "Active"}
+  ],
+  "permissions": []
+}

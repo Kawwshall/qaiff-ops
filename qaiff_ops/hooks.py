@@ -1,0 +1,7 @@
+app_name = "qaiff_ops"
+app_title = "QAIFF Ops"
+app_publisher = "QAIFF+5"
+app_description = "Factory Operations - Operator Attendance and Payroll"
+app_email = "ops@qaiff.in"
+app_license = "MIT"
+app_version = "0.0.1"
