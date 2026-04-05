@@ -1,12 +1,10 @@
 [project]
 name = "qaiff_ops"
-authors = [{name = "QAIFF+5", email = "ops@qaiff.in"}]
+version = "0.0.1"
 description = "QAIFF Ops - Factory Operations ERP"
 requires-python = ">=3.10"
-readme = "README.md"
-dynamic = ["version"]
 dependencies = []
 
 [build-system]
-requires = ["flit_core >=3.4,<4"]
-build-backend = "flit_core.buildapi"
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
