@@ -1,7 +1,7 @@
 [project]
 name = "qaiff_ops"
-version = "0.0.1"
-description = "QAIFF Ops - Factory Operations ERP"
+version = "0.0.2"
+description = "BuildOps - Factory Operations ERP"
 requires-python = ">=3.10"
 dependencies = []
 

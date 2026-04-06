@@ -1,0 +1,32 @@
+{
+  "name": "FF Project",
+  "doctype": "DocType",
+  "module": "QAIFF Ops",
+  "engine": "InnoDB",
+  "autoname": "field:project_name",
+  "title_field": "project_name",
+  "search_fields": "project_name,factory_name,city",
+  "fields": [
+    {"fieldname": "project_name", "fieldtype": "Data", "label": "Project Name", "reqd": 1, "in_list_view": 1},
+    {"fieldname": "factory_name", "fieldtype": "Data", "label": "Factory Name", "reqd": 1, "in_list_view": 1},
+    {"fieldname": "city", "fieldtype": "Data", "label": "City", "reqd": 1, "in_list_view": 1},
+    {"fieldname": "state", "fieldtype": "Data", "label": "State"},
+    {"fieldname": "start_date", "fieldtype": "Date", "label": "Start Date", "reqd": 1, "in_list_view": 1},
+    {"fieldname": "end_date", "fieldtype": "Date", "label": "End Date"},
+    {"fieldname": "status", "fieldtype": "Select", "label": "Status", "options": "Planning\nActive\nCompleted\nCancelled", "default": "Planning", "in_list_view": 1},
+    {"fieldname": "sec_team", "fieldtype": "Section Break", "label": "Team"},
+    {"fieldname": "chief_1", "fieldtype": "Link", "label": "Chief 1", "options": "Operator"},
+    {"fieldname": "chief_2", "fieldtype": "Link", "label": "Chief 2", "options": "Operator"},
+    {"fieldname": "sec_rates", "fieldtype": "Section Break", "label": "Daily Rates"},
+    {"fieldname": "rate_operator", "fieldtype": "Currency", "label": "Operator Rate", "default": "1200"},
+    {"fieldname": "rate_captain", "fieldtype": "Currency", "label": "Captain Rate", "default": "1500"},
+    {"fieldname": "rate_chief", "fieldtype": "Currency", "label": "Chief Rate", "default": "4000"},
+    {"fieldname": "notes", "fieldtype": "Small Text", "label": "Notes"},
+    {"fieldname": "sec_roster", "fieldtype": "Section Break", "label": "Operator Roster"},
+    {"fieldname": "roster", "fieldtype": "Table", "label": "Roster", "options": "FF Roster Entry"}
+  ],
+  "permissions": [
+    {"role": "System Manager", "read": 1, "write": 1, "create": 1, "delete": 1, "report": 1, "export": 1},
+    {"role": "FF Chief", "read": 1, "write": 0, "create": 0, "delete": 0, "report": 1}
+  ]
+}

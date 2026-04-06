@@ -1,0 +1,31 @@
+{
+  "name": "Operator",
+  "doctype": "DocType",
+  "module": "QAIFF Ops",
+  "engine": "InnoDB",
+  "autoname": "field:mobile",
+  "title_field": "full_name",
+  "search_fields": "full_name,mobile,aadhar_number",
+  "fields": [
+    {"fieldname": "full_name", "fieldtype": "Data", "label": "Full Name", "reqd": 1, "in_list_view": 1},
+    {"fieldname": "mobile", "fieldtype": "Data", "label": "Mobile Number", "reqd": 1, "unique": 1, "in_list_view": 1},
+    {"fieldname": "aadhar_number", "fieldtype": "Data", "label": "Aadhar Number", "in_list_view": 1},
+    {"fieldname": "role_type", "fieldtype": "Select", "label": "Role", "options": "Operator\nCaptain\nChief\nRegional Lead", "default": "Operator", "reqd": 1, "in_list_view": 1},
+    {"fieldname": "status", "fieldtype": "Select", "label": "Status", "options": "Active\nInactive", "default": "Active", "in_list_view": 1},
+    {"fieldname": "description", "fieldtype": "Small Text", "label": "About"},
+    {"fieldname": "sec_assignment", "fieldtype": "Section Break", "label": "Current Assignment"},
+    {"fieldname": "current_project", "fieldtype": "Link", "label": "Current Project", "options": "FF Project", "read_only": 1},
+    {"fieldname": "current_factory", "fieldtype": "Data", "label": "Current Factory", "read_only": 1},
+    {"fieldname": "assignment_status", "fieldtype": "Select", "label": "Assignment Status", "options": "Available\nDeployed\nOn Break", "default": "Available"},
+    {"fieldname": "sec_pay", "fieldtype": "Section Break", "label": "Payment Details"},
+    {"fieldname": "upi_id", "fieldtype": "Data", "label": "UPI ID"},
+    {"fieldname": "bank_account", "fieldtype": "Data", "label": "Bank Account Number"},
+    {"fieldname": "ifsc_code", "fieldtype": "Data", "label": "IFSC Code"},
+    {"fieldname": "bank_name", "fieldtype": "Data", "label": "Bank Name"}
+  ],
+  "permissions": [
+    {"role": "System Manager", "read": 1, "write": 1, "create": 1, "delete": 1, "report": 1, "export": 1},
+    {"role": "FF Chief", "read": 1, "write": 1, "create": 1, "delete": 0, "report": 1},
+    {"role": "FF Operator", "read": 1, "write": 1, "create": 0, "delete": 0, "if_owner": 1}
+  ]
+}
